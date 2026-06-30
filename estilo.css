@@ -1,0 +1,310 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+    --cor-fundo: #0B0F19;       /* Azul Escuro Psicodélico */
+    --cor-card: #161C2A;        /* Azul um pouco mais claro para dar contraste */
+    --cor-primaria: #E63946;    /* Vermelho Neon Balatro */
+    --cor-detalhe: #FFB703;     /* Amarelo Ouro */
+    --cor-texto: #F8F9FA;       /* Off-White */
+    --cor-texto-mutado: #A0AABF;/* Cinza para textos secundários */
+}
+
+/* Reset básico de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==========================================================================
+   2. COMPONENTES GERAIS (HEADER, FOOTER E BOTÕES)
+   ========================================================================== */
+header {
+    background-color: var(--cor-card);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--cor-primaria);
+}
+
+.logo h1 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo h1 span {
+    color: var(--cor-primaria);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--cor-detalhe);
+}
+
+footer {
+    background-color: var(--cor-card);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #232B3E;
+    font-size: 14px;
+    color: var(--cor-texto-mutado);
+}
+
+.btn-ler-mais {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-ler-mais:hover {
+    background-color: #C82937;
+}
+
+/* ==========================================================================
+   3. PÁGINA INICIAL (HOME)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(11, 15, 25, 0.8), rgba(11, 15, 25, 0.9)), url('../imagens/banner-hero.jpg') center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #232B3E;
+}
+
+.hero-conteudo h2 {
+    font-size: 36px;
+    color: var(--cor-detalhe);
+    margin-bottom: 15px;
+}
+
+.hero-conteudo p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--cor-texto-mutado);
+}
+
+.titulo-secao {
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--cor-primaria);
+    padding-left: 10px;
+}
+
+.feed-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card-post {
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex; /* Alinha imagem e texto lado a lado */
+    border: 1px solid #232B3E;
+}
+
+.img-card {
+    width: 250px;
+    object-fit: cover;
+    background-color: #1A2333; /* Fundo backup se faltar imagem */
+}
+
+.card-conteudo {
+    padding: 25px;
+}
+
+.card-conteudo h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card-conteudo p {
+    color: var(--cor-texto-mutado);
+}
+
+/* ==========================================================================
+   4. ESTRUTURA DO ARTIGO INTERNO (POST.HTML)
+   ========================================================================== */
+.artigo-unico {
+    max-width: 800px;
+}
+
+.artigo-header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.meta-artigo {
+    color: var(--cor-texto-mutado);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.img-artigo-principal {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.artigo-texto p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #E2E8F0;
+}
+
+.artigo-texto h2 {
+    color: var(--cor-detalhe);
+    margin: 30px 0 15px 0;
+}
+
+.artigo-texto h3 {
+    margin: 20px 0 10px 0;
+}
+
+.artigo-texto code {
+    background-color: #1A2333;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--cor-primaria);
+}
+
+/* Comentários */
+.secao-comentarios {
+    margin-top: 50px;
+    border-top: 2px solid #232B3E;
+    padding-top: 30px;
+}
+
+.lista-comentarios {
+    margin: 20px 0;
+}
+
+.comentario {
+    background-color: var(--cor-card);
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid var(--cor-detalhe);
+}
+
+.form-comentario {
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.form-comentario h4 {
+    margin-bottom: 15px;
+}
+
+.form-comentario input, .form-comentario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: var(--cor-fundo);
+    border: 1px solid #232B3E;
+    color: white;
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   5. PÁGINA QUEM SOMOS (SOBRE.HTML)
+   ========================================================================== */
+.sobre-projeto {
+    margin-bottom: 50px;
+}
+
+.sobre-projeto p {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--cor-texto-mutado);
+}
+
+.grid-equipe {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card-integrante {
+    background-color: var(--cor-card);
+    border: 1px solid #232B3E;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--cor-primaria);
+}
+
+.cargo {
+    color: var(--cor-detalhe);
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Responsividade Básica (Garante boa visualização em telas menores/celular) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .card-post {
+        flex-direction: column;
+    }
+    .img-card {
+        width: 100%;
+        height: 200px;
+    }
+}
